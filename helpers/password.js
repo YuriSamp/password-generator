@@ -1,14 +1,14 @@
-const numeros = Array.from({ length: 9 }, (_, i) => i + 1);
+const Numbers = Array.from({ length: 9 }, (_, i) => i + 1);
 
-const letras_maiusculas = Array.from({ length: 26 }, (_, i) =>
+const Uppercase_Letters = Array.from({ length: 26 }, (_, i) =>
   String.fromCharCode(65 + i)
 );
 
-const letras_minusculas = Array.from({ length: 26 }, (_, i) =>
+const Lowercase_Letters = Array.from({ length: 26 }, (_, i) =>
   String.fromCharCode(97 + i)
 );
 
-const caracteres_especiais = [
+const Special_Characters = [
   '!',
   '@',
   '#',
@@ -46,23 +46,23 @@ export async function passwordGenerator(options, length) {
     switch (optionCase) {
       case 'Lowercase Letters':
         password +=
-          letras_minusculas[
-            Math.floor(Math.random() * letras_minusculas.length)
+          Lowercase_Letters[
+            Math.floor(Math.random() * Lowercase_Letters.length)
           ];
         break;
       case 'Uppercase Letters':
         password +=
-          letras_maiusculas[
-            Math.floor(Math.random() * letras_maiusculas.length)
+          Uppercase_Letters[
+            Math.floor(Math.random() * Uppercase_Letters.length)
           ];
         break;
       case 'Numbers':
-        password += numeros[Math.floor(Math.random() * numeros.length)];
+        password += Numbers[Math.floor(Math.random() * Numbers.length)];
         break;
       case 'Special Characters':
         password +=
-          caracteres_especiais[
-            Math.floor(Math.random() * caracteres_especiais.length)
+          Special_Characters[
+            Math.floor(Math.random() * Special_Characters.length)
           ];
         break;
     }
